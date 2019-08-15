@@ -14,17 +14,17 @@ if (COVERAGE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g --coverage")
 endif()
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib") 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/include/
-) 
+)
 
 set(LIB_SOURCES src/verilogAST.cpp)
 
 set(LIBRARY_NAME verilogAST)
-add_library(${LIBRARY_NAME} SHARED ${LIB_SOURCES})
+add_library(${LIBRARY_NAME} ${LIB_SOURCES})
 
 if (VERILOGAST_BUILD_TESTS)
     # Download and unpack googletest at configure time
